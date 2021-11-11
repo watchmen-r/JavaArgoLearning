@@ -12,7 +12,8 @@ class ReverseInteger {
             int tail = x % 10;
             int newResult = answer * 10 + tail;
 
-            // overflowがあった場合を検知(intでマックスに入れられたら、反対にするとoverflowする)
+            // overflowがあった場合を検知(intでマックスに入れられたら、反対にするとoverflowし
+            // 元の数に戻せなくなる)
             if((newResult - tail) / 10 != answer) return 0;
 
             answer = newResult;
