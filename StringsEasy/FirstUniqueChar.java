@@ -1,6 +1,4 @@
 package StringsEasy;
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.LinkedHashMap;
 
@@ -10,25 +8,20 @@ class FirstUniqueChar {
     firstUniqueChar(s);
   }
 
-  // OKだが時間かかったので解きなおしても良い
-  // またsubstringではなくてcharAtを使う
   static int firstUniqueChar(String s) {
-    Map<String, Integer> firstMap = new LinkedHashMap<String, Integer>();
-    List<String> secondList = new ArrayList<String>();
+    Map<Character, Integer> map = new LinkedHashMap<>();
     for(int i = 0; i < s.length(); i++) {
-      String target = s.substring(i, i + 1);
-      if(!secondList.contains(target) && !firstMap.containsKey(target)) {
-        firstMap.put(target, i);
-      } else if (!secondList.contains(target) && firstMap.containsKey(target)) {
-        firstMap.remove(target);
-        secondList.add(target);
-      }
+        char c = s.charAt(i);
+        if(map.containsKey(c)) {
+            map.put(c, map.get(c) + 1);
+        } else {
+            map.put(c, 1);
+        }
     }
 
-    if(firstMap.isEmpty()) {
-      return -1;
+    for(int i = 0; i < s.length(); i++) {
+        if(map.get(s.charAt(i)) == 1) return i;
     }
-
-    return firstMap.entrySet().stream().findFirst().get().getValue();
+    return -1;
   }
 }
