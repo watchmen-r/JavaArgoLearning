@@ -8,13 +8,13 @@ package LinkedList;
 // }
 
 class DeleteNode {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-  }
+    }
 
-  // 解きなおし
-  static void deleteNode(ListNode node) {
-    node.val = node.next.val;
-    node.next = node.next.next;
-  }
+    static void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+
 }
