@@ -14,15 +14,19 @@ class ReverseLinkedList {
 
     }
 
-    // 解きなおし
     static ListNode reverseLinkedList(ListNode head) {
-        ListNode prev = null;
-        while(head != null) {
-            ListNode n = head.next;
-            head.next = prev;
-            prev = head;
-            head = n;
+        if(head == null || head.next == null) return head;
+        ListNode prev = head;
+        ListNode nowNode = head.next;
+        ListNode nextNode;
+        prev.next = null;
+        while(nowNode.next != null) {
+            nextNode = nowNode.next;
+            nowNode.next = prev;
+            prev = nowNode;
+            nowNode = nextNode;
         }
-        return prev;
+        nowNode.next = prev;
+        return nowNode;
     }
 }
