@@ -14,7 +14,6 @@ class RemoveNthNode {
 
     }
 
-    // 解きなおし
     static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode start = new ListNode(0);
         ListNode slow = start;
