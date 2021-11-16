@@ -60,6 +60,5 @@ class HeapSort {
 
             heapify(array, n, largest);
         }
-
     }
 }
