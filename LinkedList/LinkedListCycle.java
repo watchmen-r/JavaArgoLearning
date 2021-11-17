@@ -1,5 +1,8 @@
 package LinkedList;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // 下記が入ってくる
 class ListNode {
     int val;
@@ -15,16 +18,12 @@ class LinkedListCycle {
 
     }
 
-    // 発想はめちゃくちゃ難しい
     static boolean hasCycle(ListNode head) {
-        if(head == null) return false;
-        ListNode walker = head;
-        ListNode runner = head;
-
-        while(runner.next != null && runner.next.next != null) {
-            walker = walker.next;
-            runner = runner.next.next;
-            if(walker == runner) return true;
+        Set<ListNode> nodeSet = new HashSet<>();
+        while(head != null) {
+            if(nodeSet.contains(head)) return true;
+            nodeSet.add(head);
+            head = head.next;
         }
         return false;
     }
