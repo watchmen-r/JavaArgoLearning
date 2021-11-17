@@ -1,5 +1,8 @@
 package LinkedList;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // 下記が入ってくる
 // class ListNode {
 //     int val;
@@ -14,20 +17,24 @@ class PalindromeLinkedList {
 
     }
 
-    static ListNode frontPointer;
-
-    // 難しい 公式の簡単なやつだとListとか使っているがListの問題でListを使うのは避けたい
     static boolean isPalindrome(ListNode head) {
-        frontPointer = head;
-        return recursiveCheck(head);
-    }
+        List<Integer> array = new ArrayList<>();
 
-    private static boolean recursiveCheck(ListNode currentNode) {
-        if(currentNode != null) {
-            if(!recursiveCheck(currentNode.next)) return false;
-            if(currentNode.val != frontPointer.val) return false;
-            frontPointer = frontPointer.next;
+        ListNode current = head;
+        while(current != null) {
+            array.add(current.val);
+            current = current.next;
+        }
+
+        int front = 0;
+        int back = array.size() - 1;
+        while(front < back) {
+            if(!array.get(front).equals(array.get(back))) return false;
+
+            front++;
+            back--;
         }
         return true;
     }
+
 }
