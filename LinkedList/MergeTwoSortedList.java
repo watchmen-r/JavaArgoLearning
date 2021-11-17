@@ -14,25 +14,17 @@ class MergeTwoSortedList {
 
     }
 
-    // 解きなおし
     static ListNode mergeTwoSortedList(ListNode l1, ListNode l2) {
-        ListNode fakeHead = new ListNode(0);
-        ListNode answer = fakeHead;
-        while(l1 != null || l2 != null) {
-            if(l1 == null) {
-                answer.next = l2;
-                l2 = l2.next;
-                answer = answer.next;
-                continue;
-            }
-            if(l2 == null) {
-                answer.next = l1;
-                l1 = l1.next;
-                answer = answer.next;
-                continue;
-            }
+        ListNode answer = new ListNode(0);
+        ListNode start = answer;
 
-            if(l1.val <= l2.val) {
+        while (l1 != null || l2 != null) {
+            int l1num = Integer.MAX_VALUE;
+            int l2num = Integer.MAX_VALUE;
+            if(l1 != null) l1num = l1.val;
+            if(l2 != null) l2num = l2.val;
+
+            if(l1num < l2num) {
                 answer.next = l1;
                 l1 = l1.next;
             } else {
@@ -41,6 +33,6 @@ class MergeTwoSortedList {
             }
             answer = answer.next;
         }
-        return fakeHead.next;
+        return start.next;
     }
 }
