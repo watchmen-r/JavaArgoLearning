@@ -20,7 +20,6 @@ class ValidateBinaryTree {
 
     }
 
-    // 解きなおし、BinaryTreeについて理解不足
     static boolean validate (TreeNode root, Integer low, Integer high) {
         if(root == null) return true;
 
@@ -28,9 +27,7 @@ class ValidateBinaryTree {
             return false;
         }
 
-        // 左の第３引数には、これ以上大きくなってはいけないのでroot.valを
-        // 右の第２引数には、これ以上小さくなってはいけないのでlowにroot.valを入れている
-        return validate(root.left, low, root.val) && validate(root.right, root.val, high);
+        return validate(root.right, root.val, high) && validate(root.left, low, root.val);
     }
 
     static boolean isValidBST(TreeNode root) {
