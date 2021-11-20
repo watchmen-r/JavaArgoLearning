@@ -21,7 +21,6 @@ class ConvertSortedArray {
 
     static TreeNode helper(int[] num, int left, int right) {
         if(left > right) return null;
-
         int mid = (left + right) / 2;
         TreeNode node = new TreeNode(num[mid]);
         node.left = helper(num, left, mid - 1);
@@ -29,10 +28,8 @@ class ConvertSortedArray {
         return node;
     }
 
-    // 解きなおし
     static TreeNode sortedArrayToBST(int[] nums) {
-        if(nums.length == 0) return null;
-        return helper(nums, 0, nums.length-1);
+        return helper(nums, 0, nums.length - 1);
     }
 
 }
