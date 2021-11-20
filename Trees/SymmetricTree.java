@@ -1,7 +1,5 @@
 package Trees;
 
-import java.util.Stack;
-
 // 下記が入ってくる
 class TreeNode {
     int val;
