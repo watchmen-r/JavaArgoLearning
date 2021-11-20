@@ -17,24 +17,21 @@ class FirstBadVersion {
         return mid;
     }
 
-    // 考えはOK、実装も概ねOK、だがoverflowについて考えられていなかった。
     static int firstBadVersion(int n) {
-        int min = 0;
-        int max = n;
-        int mid = 0;
-        while(min != max) {
-            // 安直に(max + min /2）をするとoverflowを起こす
-            // そのため下記のようにする（普通に計算すれば(max + min /2) と同じになる）
-            mid = min + (max - min) / 2;
+       
+        int left = 1;
+        int right = n;
 
-            // badの場合はbadの最初はmin側にある
+        while(left < right) {
+            int mid = left + (right - left) / 2;
             if(isBadVersion(mid)) {
-                max = mid;
+                right = mid - 1;
             } else {
-                min = mid + 1;
+                left = mid;
             }
         }
-        return min;
+        return left+1;
+
     }
 
 }
