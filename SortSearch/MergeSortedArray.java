@@ -5,21 +5,21 @@ class ConvertSortedArray {
 
     }
 
-    // 解法は良かったが、書ききれなかった解きなおし
     static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int[] nums1Copy = new int[m];
+        if(n == 0) return;
+        int[] num1Copy = new int[m];
         for(int i = 0; i < m; i++) {
-            nums1Copy[i] = nums1[i];
+            num1Copy[i] = nums1[i];
         }
 
-        int p1 = 0;
-        int p2 = 0;
+        int mp = 0;
+        int np = 0;
 
         for(int i = 0; i < m+n; i++) {
-            if(p2 >= n || (p1 < m && nums1Copy[p1] <= nums2[p2])) {
-                nums1[i] = nums1Copy[p1++];
+            if(np >= n || (mp < m && num1Copy[mp] < nums2[np])) {
+                nums1[i] = num1Copy[mp++];
             } else {
-                nums1[i] = nums2[p2++];
+                nums1[i] = nums2[np++];
             }
         }
     }
