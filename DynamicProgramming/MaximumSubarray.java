@@ -6,18 +6,16 @@ class MaximumSubarray {
         System.out.println(maxSubArray(array));
     }
 
-    // 解きなおし
     static int maxSubArray(int[] nums) {
         // Kadane's Algorithm
-        int currentSubarray = nums[0];
-        int maxSubarray = nums[0];
-
-        for(int i = 1; i < nums.length; i++) {
+        int currentSubArray = nums[0];
+        int maxSubArray = nums[0];
+        for(int i = 0; i < nums.length; i++) {
             int num = nums[i];
 
-            currentSubarray = Math.max(num, currentSubarray + num);
-            maxSubarray = Math.max(maxSubarray, currentSubarray);
+            currentSubArray = Math.max(num, currentSubArray + num);
+            maxSubArray = Math.max(maxSubArray, maxSubArray + currentSubArray);
         }
-        return maxSubarray;
+        return maxSubArray;
     }
 }
