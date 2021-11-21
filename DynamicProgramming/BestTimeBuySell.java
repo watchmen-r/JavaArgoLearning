@@ -6,7 +6,6 @@ class BestTimeBuySell {
         System.out.println(maxProfit(array));
     }
 
-    // OK discussにDP問題ではないという指摘もある
     static int maxProfit(int[] prices) {
         int[] dp = new int[prices.length];
         int min = prices[0];
