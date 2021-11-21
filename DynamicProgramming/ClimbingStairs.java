@@ -5,7 +5,6 @@ class ClimbingStairs {
 
     }
 
-    // OK
     static int climbStairs(int n) {
         int[] dp = new int[n];
         
