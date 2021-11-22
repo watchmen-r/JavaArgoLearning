@@ -26,6 +26,7 @@ class MinStack {
         return head.min;
     }
 
+    // 自分でStackを実装するため、Nodeを定義
     private class Node {
         int val;
         int min;
