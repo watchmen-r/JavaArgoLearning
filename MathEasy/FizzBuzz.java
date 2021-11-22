@@ -9,7 +9,6 @@ class MaximumSubarray {
         System.out.println(fizzBuzz(n).toString());
     }
 
-    // OK
     public static List<String> fizzBuzz(int n) {
         List<String> answer = new ArrayList<>();
         for(int i = 1; i <= n; i++) {
