@@ -6,7 +6,6 @@ class CountPrimes {
         System.out.println(countPrimes(n));
     }
 
-    // 基礎なので解きなおし
     public static int countPrimes(int n) {
         // 2は判定に含まないので(strictly less than)
         if(n <= 2) {
