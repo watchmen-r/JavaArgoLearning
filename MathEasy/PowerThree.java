@@ -6,7 +6,6 @@ class PowerThree {
         System.out.println(isPowerOfThree(n));
     }
 
-    // OK
     public static boolean isPowerOfThree(int n) {
         if(n == 1) return true;
 
