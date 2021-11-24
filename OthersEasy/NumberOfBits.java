@@ -5,7 +5,6 @@ class NumberOfBits {
         System.out.println(hammingWeight(00000000000000000000000000001011));
     }
 
-    //　解きなおし
     static int hammingWeight(int n) {
         int bits = 0;
         int mask = 1;
