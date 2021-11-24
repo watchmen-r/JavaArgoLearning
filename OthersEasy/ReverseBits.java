@@ -5,7 +5,6 @@ class ReverseBits {
         System.out.println(reverseBits(00000000000000000000000000001011));
     }
 
-    //　解きなおし
     static int reverseBits(int n) {
         if (n == 0) return 0;
 
