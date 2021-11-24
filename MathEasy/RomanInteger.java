@@ -22,7 +22,6 @@ class RomanInteger {
         values.put("I", 1);
     }
 
-    // OK
     public static int romanToInt(String s) {
         int sum = 0;
 
