@@ -9,7 +9,6 @@ class PascalTriangle {
         System.out.println(generate(5));
     }
 
-    //　OK!!
     static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> answer = new ArrayList<>();
         answer.add(Arrays.asList(1));
