@@ -1,8 +1,7 @@
 package OthersEasy;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.HashSet;
+import java.util.Set;
 
 class MissingNumber {
     public static void main(String[] args) {
@@ -10,19 +9,14 @@ class MissingNumber {
         System.out.println(missingNumber(nums));
     }
 
-    // OK
     static int missingNumber(int[] nums) {
-        int numLenght = nums.length;
-        List<Integer> list = Arrays.stream(nums).boxed().collect(Collectors.toList());
-        
-        int answer = 0;
-        for(int i = 0; i <= numLenght; i++) {
-            if(!list.contains(i)) {
-                answer = i;
-                break;
-            }
+        Set<Integer> numSet = new HashSet<>();
+        for(int num: nums) numSet.add(num);
+
+        for(int i = 0; i <= nums.length; i++) {
+            if(!numSet.contains(i)) return i;
         }
-        return answer;
+        return -1;
     }
 
 }
