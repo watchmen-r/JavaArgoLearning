@@ -7,15 +7,6 @@ class ValidParentheses {
         System.out.println(isValid("{{}}()"));
     }
 
-    // static Map<String, Integer> countMap = new HashMap<>();
-
-    // {
-    //     countMap.put("{", 0);
-    //     countMap.put("(", 0);
-    //     countMap.put("[", 0);
-    // }
-
-    // OK
     static boolean isValid(String s) {
         Stack<String> stack = new Stack<String>();
 
