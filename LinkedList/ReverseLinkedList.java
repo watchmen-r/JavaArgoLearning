@@ -1,6 +1,5 @@
 package LinkedList;
 
-// 下記が入ってくる
 // class ListNode {
 //     int val;
 //     ListNode next;
